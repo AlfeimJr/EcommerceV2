@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do usuario</title>
+    <link rel="stylesheet" href="/style/headerGlobal.css">
+    <link rel="stylesheet" href="/style/painel-usuario.css">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+    
+</head>
+<body>
+    <%- include('../components/header.ejs')  %> 
+    <main>
+        <div class="principal">
+            <div class="perfilFilho">
+                <div class="perfilFilho2">
+                    <div class="perfilFilho3">
+                        <div></div>
+                        <div class="bemvindo">
+                            <div class="nome">
+                                <div class="nome2">
+                                    <div class="fotoperfil">
+                                        <div class="fotoperfil2">
+                                            <img src="  /img/perfil1.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="infospessoais">
+                                        <span class="infospessoais2">
+                                            Bem vindo,
+                                            Gabriel Renovato da Silva
+                                        </span>
+                                        <span class="email">
+                                            gabriel_renovato@outlook.com
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="credito">
+                                <div class="credito2">
+                                    <span class="creditodisponivel">Crédito Disponivel</span>
+                                    <span class="creditodisponivel2">R$ 0,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ultimoPedido">
+                            <h1 class="seuUltimoPedido">SEU ÚLTIMO PEDIDO</h1>
+                        </div>
+                        <div class="especificacaoDoPedido">
+                            <div class="nenhum">
+                                NENHUM PEDIDO
+                            </div>
+                        </div>
+                        <div class="atalhos">
+                            <div class="titulodapagina">
+                                <h1 class="tituloatalho">ATALHOS</h1>
+                            </div>
+                            <div class="meuspedidosBotao">
+                                <button class="botaomeuspedidos">
+                                    <span>MEUS PEDIDOS</span>
+                                </button>
+                                <button class="botaomeuspedidos">
+                                    <span>ATENDIMENTO AO CLIENTE</span>
+                                </button>
+                                <button class="botaomeuspedidos">
+                                    <span>FAVORITOS</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
