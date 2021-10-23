@@ -69,3 +69,4 @@ CREATE TABLE devgames.categoria(
   content VARCHAR(200),
   created_at TIMESTAMP 
 );
+
