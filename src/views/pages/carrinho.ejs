@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="/style/headerGlobal.css">
+    <link rel="stylesheet" href="/style/carrinho.css">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"rel="stylesheet"/>
+</head>
+<body>
+    <%- include('../components/header.ejs')  %> 
+    <main class="mainClass">
+    <div class="carrinhoEfrete">
+        <div class="carrinhoConteiner">
+            <div class="carrinhofilho">
+                <h2>SELECIONE O ENDEREÇO</h2>
+            </div>
+            <form action="cep">
+                <input id="inputCep" placeholder="Inserir CEP">
+                <button type="submit" id="buttonOkCep">OK</button>
+            </form>
+        </div>
+        <div class="comecosection">
+        <section class="frete">
+            <div class="produtofrete">
+                <h2>PRODUTO E FRETE</h2>
+                <button id="removerTodosOsProdutos" class="remover">REMOVER TODOS OS PRODUTOS</button>
+            </div>    
+            <div class="vendaConteiner">
+                <div class="vendidoEentregue">
+                    <span class="nomdeDaloja">
+                        "Vendido e entregue por : "
+                        <b>DevGame!</b>
+                    </span>
+                    <div class="produto">
+                        <div class="productConteiner">
+                            <div class="produto2">
+                                <img src="/img/Computador.jpg" alt="" id="computadorCarrinho">
+                                <div class="detalhes">
+                                    <span class="marca">Pichau Amd</span>
+                                    <a href="" class="computadorNome">Computador Gamer AMD RYZEN 3600 Rtx 2600</a>
+                                    <div class="especificacaoPreço">
+                                        <span class="desconto">
+                                            "Com desconto no PIX: "
+                                            <b>R$ 2700,00</b>
+                                        </span>   
+                                        <span class="parcelado">
+                                            "Parcelado no cartão em até 12x sem juros: "
+                                            <b>R$ 2900,00</b>
+                                        </span>                                   
+                                    </div>
+                                    <div class="ninja">
+                                        <div class="ninja2">
+                                            <div class="ninja3">
+                                                "OFERTA NINJA"
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quantidade">
+                                    <span class="quant">
+                                        Quant:
+                                    </span>
+                                    <div class="numero">
+                                        <p>1</p>
+                                    </div>
+                                </div>
+                                <div class="precoAvista">
+                                    <span class="priceavista">Preço a vista no PIX:</span>
+                                    <span class="valorAvista">R$ 2700,00</span>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+    </div>
+    <div class="resumo">
+        <div class="resumo2">
+            <div class="resumo3">
+                <div class="resumo4">
+                    <h2>RESUMO</h2>
+                </div>
+                <div class="valordosprodutos">Valor dos Produtos: 
+                <b>R$ 2700,00</b>
+                </div>
+                <div class="linha"></div>
+                <div class="frete2">
+                    Frete:
+                    <b>R$ 20,00</b>
+                </div>
+                <div class="total">
+                    <div class="total2">
+                        <span>
+                            Total
+                            a prazo:
+                        </span>
+                        <b>R$ 2900,00</b>
+                    </div>
+                    <span>
+                        (em até 
+                        <b>
+                            12
+                            x
+                        </b>
+                        de
+                        <b>
+                            R$ 210,00
+                            sem juros
+                        </b>
+                        )
+                    </span>
+                </div>
+                <div class="totalboleto">
+                    <span>
+                        Valor no
+                        <b>PIX</b>
+                    </span>
+                    <div class="totalboleto2">
+                        R$ 2700,00
+                        <span class="valordesconto">
+                            (Economize: 
+                            <b>R$ 200,00</b>
+                            )
+                        </span>
+                    </div>
+                </div>
+                <button id="botaodepagamento" class="botaopagamento" > <a href=""> IR PARA O PAGAMENTO </a></button>
+                <button id="botaoparavoltar" class="botaopagamento2"> <a href="http://localhost:3000/categorias"> CONTINUAR COMPRANDO </a></button>
+            </div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>
