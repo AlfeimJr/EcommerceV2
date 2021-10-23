@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Poppins';
+  }
+
+footer {
+    background: #f3f3f3;
+  }
+  
+.atendimentoUm{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    font-size: 12px;
+    
+}
+
+.desenvolvido{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    font-size: 12px;
+    
+}
