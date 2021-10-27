@@ -11,5 +11,7 @@ routes.get('/carrinho', indexController.exibirCarrinho)
 routes.get('/painel-usuario', indexController.exibirPerfil)
 routes.get('/pagamento', indexController.exibirPagamento)
 routes.get('/login-cadastro', indexController.exibirLogin)
+routes.get('/finalizar-compra', indexController.fazerPedido)
+routes.post('/finalizar-compra', indexController.fazerPedido)
 
 module.exports = routes;

@@ -23,6 +23,9 @@ const indexController ={
     exibirLogin: ((req, res)=> {
         res.render('pages/login-cadastro')
     }),
+    fazerPedido: (req,res)=>{
+        res.render('pages/finalizar-pedido')
+    }
 }
 
 module.exports = indexController;

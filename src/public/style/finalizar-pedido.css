@@ -1,0 +1,53 @@
+main{
+    margin: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.main{
+    width: 400px;
+    height: 250px;
+    border: 1px solid rgb(208, 208, 208);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.titulo{
+    text-align:left;
+    margin: 10px 5px 5px 15px;
+}
+.campo{
+    border: 1px solid rgb(208, 208, 208);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    margin: 5px auto;
+    width: 90%;
+}
+
+
+.fazer-pedido{
+    width: 100px;
+    background-color: #000;
+    color: #FFF;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 600;
+    padding: 6px;
+    margin: 20px auto auto 285px;
+    text-align: center;
+    text-decoration: none;
+    
+}
+.fazer-pedido:hover{
+    opacity: 0.9;
+}
+.fazer-pedido:active{
+    padding: 5.5px;
+    border: 1px solid rgb(84, 202, 192);
+}
+
