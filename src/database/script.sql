@@ -4,7 +4,7 @@
 -- venhao a emtender a logica falo em questao das foreign key
 CREATE DATABASE devgames;
 
-use devgames;
+USE devgames;
 
 CREATE TABLE usuario(
   id INTEGER PRIMARY KEY auto_increment,
