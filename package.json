@@ -10,8 +10,10 @@
   "author": "leandroguitarjesus89@gmail.com",
   "license": "MIT",
   "dependencies": {
+    "@koa/cors": "^3.1.0",
     "axios": "^0.23.0",
     "body-parser": "^1.19.0",
+    "boom": "^7.3.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "ejs": "^3.1.6",
@@ -19,11 +21,16 @@
     "express-jwt": "^6.1.0",
     "express-session": "^1.17.2",
     "express-validator": "^6.13.0",
+    "fastest-validator": "^1.12.0",
     "jest": "^27.3.1",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.1.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.3",
     "mysql2": "^2.3.2",
-    "sequelize": "^6.7.0"
+    "sequelize": "^6.8.0",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "express-generator": "^4.16.1",
