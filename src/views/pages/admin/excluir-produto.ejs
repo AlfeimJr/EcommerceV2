@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/home.css" />
+    <link rel="stylesheet" href="/style/headerGlobal.css">
+    <link rel="stylesheet" href="/style/footerglobal.css">
+    <title>Excluir Produtos</title>
+</head>
+
+<body>
+
+  <%- include('../components/header') %>
+
+<main class="produtos">
+  <a class="button-create" href="/admin/cadastro-produto">Cadastrar Novo Produto</a>
+  
+    <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>Imagem</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% produtos.forEach(produto => { %>
+          <tr>
+            <td><%= produto.id %> </td>
+            <td><%= produto.nome %> </td>
+            <td>
+              <img src="/uploads/<%= produto.imagem %>" />
+            </td>
+            <td>
+              <form
+                method="POST"
+                action="/excluir-produto/<%= produto.id %>?_method=DELETE"
+              >
+                <button type="submit">Excluir</button>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+</main>
+
+        <%- include('../components/footer.ejs')  %> 
+
+</body>
+
+</html>
