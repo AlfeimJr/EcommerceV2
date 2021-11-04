@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/home.css" />
+    <link rel="stylesheet" href="/style/headerGlobal.css">
+    <link rel="stylesheet" href="/style/footerglobal.css">
+    <title>Cadastro de Produtos</title>
+</head>
+
+<body>
+        <%-include('../components/header') %>
+
+<main>
+
+        <table> 
+                <thead>
+                        <tr>
+                                <th style="border: 1px solid gray;">Nome</th>
+                                <th style="border: 1px solid gray;">Preço</th>
+                                <th style="border: 1px solid gray;">Imagem</th>
+                                <th style="border: 1px solid gray;">Qnt</th>
+                                <th style="border: 1px solid gray;">Promoção</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        <% produtos.forEach(produto => { %>
+                        <tr>
+                                <th style="border: 1px solid gray;"><%= produto.nome %></th>
+                                <th style="border: 1px solid gray;"><%= produto.preco%></th>
+                                <th style="border: 1px solid gray;"><%= produto.imagem %></th>
+                                <th style="border: 1px solid gray;"><%= produto.quantidade %></th>
+                                <th style="border: 1px solid gray;"><%= produto.ativo %></th>
+                                
+                        </tr>
+                        <% });  %> 
+                </tbody>
+        </table>
+</main>
+
+        <%- include('../components/footer.ejs')  %> 
+
+</body>
+
+</html>

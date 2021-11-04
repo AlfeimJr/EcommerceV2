@@ -1,5 +1,5 @@
 const services = require('../features/services');
-const Boom = require('boom');
+//const Boom = require('boom');
 
 module.exports = {
     auth: async ctx => {

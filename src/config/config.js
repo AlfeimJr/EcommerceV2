@@ -1,10 +1,9 @@
-'use strict';
 
 module.exports = {
    
-    username: root,
+    username: 'root',
     password: null,
-    database: database_development,
+    database: 'devgames',
     host: "localhost",
     dialect: "mysql"
   
