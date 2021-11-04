@@ -19,6 +19,7 @@
         <table> 
                 <thead>
                         <tr>
+                                <th style="border: 1px solid gray;">ID</th>
                                 <th style="border: 1px solid gray;">Nome</th>
                                 <th style="border: 1px solid gray;">Preço</th>
                                 <th style="border: 1px solid gray;">Imagem</th>
@@ -29,6 +30,7 @@
                 <tbody>
                         <% produtos.forEach(produto => { %>
                         <tr>
+                                <th style="border: 1px solid gray;"><%= produto.id %></th>
                                 <th style="border: 1px solid gray;"><%= produto.nome %></th>
                                 <th style="border: 1px solid gray;"><%= produto.preco%></th>
                                 <th style="border: 1px solid gray;"><%= produto.imagem %></th>

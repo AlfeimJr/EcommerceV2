@@ -9,7 +9,7 @@ const ProdutoController = {
             limit:10,
             offset: (page - 1) * 10
         });
-        console.log(produtos)
+        
         let totalPagina = Math.round(total/10)
         return res.render('admin/produtos-total',{produtos,totalPagina})
 
