@@ -19,7 +19,6 @@ CREATE TABLE usuario(
 CREATE TABLE fabricante (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(200)
-
 );
 
 

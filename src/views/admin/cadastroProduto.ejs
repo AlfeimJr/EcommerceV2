@@ -12,20 +12,37 @@
 </head>
 
 <body>
-        <!-- <%-include('../components/header') %> -->
+        <%-include('../components/header') %> 
 
 <main>
 
-    <a class="button-create" href="/admin/cadastro-produto">Cadastrar Novo Produto</a>
+    
    
-    <form action="/salvar-produto" enctype="multipart/form-data" method="POST">
-        <label>Nome do produto</label>
-        <input type="text" name="nome" />
-        <label>Descrição do produto</label>
-        <input type="text" name="descricao" />
-        <label>Link da Imagem do produto</label>
-        <input type="file" name="imagem" />
-        <button type="submit">Finalizar o cadastro</button>
+    <form style="display: flex; flex-direction: column; align-items: center; margin: 20px;" action="/produtosCadastro" method="POST">
+        <label for="nome">nome</label>
+        <br>
+        <input class="border-2 border-green-400" type="text" id="nome" name="nome" >
+        <br>
+        <label for="preco">Preco</label>
+        <input  type="text" name="preco" />
+        <br>
+        <label for="imagem">Imagem</label>
+        <input  type="text" name="imagem" />
+        <br>
+        <label for="descricao">Descrição</label>
+        <input  type="text" name="descricao" />
+        <br>
+        <label for="id_fabricante" >fabricante</label>
+        <input type="text" name="id_fabricante" />
+        <br>
+        <label for="quantidade">Quantidade</label>
+        <input  type="text" name="quantidade"/>
+        <br>
+        <label for="ativo">ativo</label>
+        <input  type="text"  name="ativo"/>
+        <br>
+
+        <button type="submit">Cadastrar</button>
       </form>
 </main>
 

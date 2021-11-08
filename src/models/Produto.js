@@ -12,6 +12,7 @@ module.exports = (sequelize,DataTypes)=>{
             imagem:DataTypes.STRING(200),
             quantidade:DataTypes.STRING(200),
         },
+        
         {
             tableName:'produto',
             timestamps: false

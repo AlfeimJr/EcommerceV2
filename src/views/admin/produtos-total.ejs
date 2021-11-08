@@ -15,7 +15,7 @@
         <%-include('../components/header') %>
 
 <main>
-
+        <a style="background-color: deepskyblue;"href="/produtosCadastro">Cadastrar Novo Produto</a>
         <table> 
                 <thead>
                         <tr>
@@ -41,6 +41,12 @@
                         <% });  %> 
                 </tbody>
         </table>
+
+        <div style="display: flex;gap: 10px;margin-top: 2rem;">
+                <% for (let nrPagina = 1; nrPagina <= totalPagina; nrPagina++){ %>
+                    <div style="background-color: deepskyblue;" ><a href="?page=<%= nrPagina %>"><%= nrPagina %></a></div>
+                <% } %>
+            </div>
 </main>
 
         <%- include('../components/footer.ejs')  %> 

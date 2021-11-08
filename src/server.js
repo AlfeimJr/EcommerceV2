@@ -10,6 +10,8 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.resolve("src","views"));
 
+app.use(express.urlencoded({extended:false}))
+
 app.use(express.static(path.resolve("src",'public')));
 app.use(rotas);
 
