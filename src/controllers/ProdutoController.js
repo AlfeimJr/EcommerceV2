@@ -29,7 +29,7 @@ const ProdutoController = {
             quantidade,
             ativo
         });
-
+        console.log('este e o o ativo: ', ativo)
 
         console.log(resultado)
 

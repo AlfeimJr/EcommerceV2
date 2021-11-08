@@ -35,7 +35,13 @@
                                 <th style="border: 1px solid gray;"><%= produto.preco%></th>
                                 <th style="border: 1px solid gray;"><%= produto.imagem %></th>
                                 <th style="border: 1px solid gray;"><%= produto.quantidade %></th>
-                                <th style="border: 1px solid gray;"><%= produto.ativo %></th>
+                                <th style="border: 1px solid gray;">
+                                        <% if (produto.ativo === 0) { %>
+                                         <p style="background-color: #da1b1b;color: #FFF;">Não</p>
+                                        <% }else{ %>
+                                         <p style="background-color:#0069fa; color:#FFF">Sim</p>
+                                        <% } %> 
+                                </th>
                                 
                         </tr>
                         <% });  %> 

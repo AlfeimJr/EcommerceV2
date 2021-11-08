@@ -11,6 +11,9 @@ module.exports = (sequelize,DataTypes)=>{
             preco:DataTypes.STRING(200),
             imagem:DataTypes.STRING(200),
             quantidade:DataTypes.STRING(200),
+            ativo:{
+                type:DataTypes.INTEGER
+            }
         },
         
         {
