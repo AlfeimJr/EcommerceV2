@@ -15,20 +15,22 @@
         <%-include('../components/header') %> 
 
 <main>
-
-    <h2 align="center">Cadastro de Produto</h2>
-    <br>
+    <h2 align="center">Editando Produto</h2>
+    
    
-    <form style="display: flex; flex-direction: column; align-items: center; margin: 20px;" action="admin/produtosCadastro" method="POST">
+    <form style="display: flex; flex-direction: column; align-items: center; margin: 20px;" action="/produtosCadastro" method="POST">
+       
+       
+        
         <label for="nome">nome</label>
         <br>
-        <input class="border-2 border-green-400" type="text" id="nome" name="nome" >
+        <input class="border-2 border-green-400" type="text" id="nome" name="nome" value="">
         <br>
         <label for="preco">Preco</label>
-        <input  type="text" name="preco" />
+        <input  type="text" name="preco" value="" />
         <br>
         <label for="imagem">Imagem</label>
-        <input  type="text" name="imagem" />
+        <input  type="text" name="imagem"  />
         <br>
         <label for="descricao">Descrição</label>
         <input  type="text" name="descricao" />
@@ -43,7 +45,7 @@
         <input  type="text"  name="ativo"/>
         <br>
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit">Salvar</button>
       </form>
 </main>
 
