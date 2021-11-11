@@ -48,7 +48,7 @@ const ProdutoController = {
 
         console.log(resultado)
 
-        return res.redirect('admin/produtos')
+        return res.redirect('/admin/produtos')
     },
     async edit(req,res){
         const {id} = req.params
