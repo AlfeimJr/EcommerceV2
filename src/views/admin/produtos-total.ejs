@@ -67,6 +67,7 @@
                                 <th style="border: 1px solid gray;">Preço</th>
                                 <th style="border: 1px solid gray;">Imagem</th>
                                 <th style="border: 1px solid gray;">Qnt</th>
+                                <th style="border: 1px solid gray;">Fabricante</th>
                                 <th style="border: 1px solid gray;">Promoção</th>
                                 <th style="border: 1px solid gray;">Ações</th>
                         </tr>
@@ -79,6 +80,7 @@
                                 <th style="border: 1px solid gray;"><%= produto.preco%></th>
                                 <th style="border: 1px solid gray;"><%= produto.imagem %></th>
                                 <th style="border: 1px solid gray;"><%= produto.quantidade %></th>
+                                <th style="border: 1px solid gray;"><%= produto.id_fabricante %></th>
                                 <th style="border: 1px solid gray;">
                                         <% if (produto.ativo === 0) { %>
                                          <p style="background-color: #b3a9a9;color: #FFF;">Não</p>
@@ -89,7 +91,7 @@
                                 </th>
                                 <th class="ações-container">
                                         <a  href="/detalhesProduto/<%= produto.id %>"> <button class="btn blue">👀</button></a>
-                                        <a  href="/editarProduto/<%= produto.id %>"> <button class="btn yellow">✏️</button></a>
+                                        <a  href="/admin/editarProduto/<%= produto.id %>"> <button class="btn yellow">✏️</button></a>
 
                                         <form action="/admin/deletarProduto/<%= produto.id%>?_method=DELETE" method="post">
                                                 <button class="btn red" type="submit">🗑️</button>

@@ -22,25 +22,25 @@
     <form style="display: flex; flex-direction: column; align-items: center; margin: 20px;" action="admin/produtosCadastro" method="POST">
         <label for="nome">nome</label>
         <br>
-        <input class="border-2 border-green-400" type="text" id="nome" name="nome" >
+        <input class="border-2 border-green-400" type="text" id="nome" name="nome" required>
         <br>
         <label for="preco">Preco</label>
-        <input  type="text" name="preco" />
+        <input  type="text" name="preco" required />
         <br>
         <label for="imagem">Imagem</label>
-        <input  type="text" name="imagem" />
+        <input  type="text" name="imagem" required/>
         <br>
         <label for="descricao">Descrição</label>
-        <input  type="text" name="descricao" />
+        <input  type="text" name="descricao" required/>
         <br>
         <label for="id_fabricante" >fabricante</label>
-        <input type="text" name="id_fabricante" />
+        <input type="text" name="id_fabricante" required/>
         <br>
         <label for="quantidade">Quantidade</label>
-        <input  type="text" name="quantidade"/>
+        <input  type="text" name="quantidade" required/>
         <br>
         <label for="ativo">ativo</label>
-        <input  type="text"  name="ativo"/>
+        <input  type="text"  name="ativo" required/>
         <br>
 
         <button type="submit">Cadastrar</button>

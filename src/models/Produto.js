@@ -10,6 +10,11 @@ module.exports = (sequelize,DataTypes)=>{
             nome:DataTypes.STRING(200),
             preco:DataTypes.STRING(200),
             imagem:DataTypes.STRING(200),
+            id_fabricante:{
+                type:DataTypes.INTEGER,
+                
+                foreignKey: true
+            },
             quantidade:DataTypes.STRING(200),
             ativo:{
                 type:DataTypes.INTEGER

@@ -51,34 +51,37 @@ const ProdutoController = {
         return res.redirect('admin/produtos')
     },
     async edit(req,res){
-        // const {id} = req.params
-        // //o metodo findByPk ele ja busca pelo id
-        // const produto = await Produto.findByPk(id);
-        // return res.render('admin/editProduto',{produto})
+        const {id} = req.params
+        //o metodo findByPk ele ja busca pelo id
+        const produto = await Produto.findByPk(id);
+        return res.render('admin/editarProduto',{produto})
 
 
 
         return res.render('admin/editarProduto')
     },
 
-    // async update(req,res){
-    //     const {id} = req.params
-    //     const {nome, email, senha} = req.body
+    async update(req,res){
+        const {id} = req.params
+        const {nome, preco, imagem, id_fabricante,quantidade, ativo} = req.body
 
-    //     const resultado = await Usuario.update({
-    //         nome,
-    //         email,
-    //         senha
-    //     },
-    //     {
-    //         where:{
-    //             id_usuario:id
-    //         }
-    //     })
+        const resultado = await Produto.update({
+            nome, 
+            preco, 
+            imagem, 
+            id_fabricante, 
+            quantidade,
+            ativo
+        },
+        {
+            where:{
+                id:id
+            }
+        })
 
-    //     console.log(resultado)
-    //     return res.redirect('/')
-    // },
+        console.log(resultado)
+        return res.redirect('/admin/produtos')
+    },
 
     async destroy(req,res){
         const {id} = req.params

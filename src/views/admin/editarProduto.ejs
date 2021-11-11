@@ -18,31 +18,28 @@
     <h2 align="center">Editando Produto</h2>
     
    
-    <form style="display: flex; flex-direction: column; align-items: center; margin: 20px;" action="/produtosCadastro" method="POST">
+    <form style="display: flex; flex-direction: column; align-items: center; margin: 20px;" action="/admin/editarProduto/<%= produto.id %>?_method=PUT" method="post">
        
        
         
         <label for="nome">nome</label>
         <br>
-        <input class="border-2 border-green-400" type="text" id="nome" name="nome" value="">
+        <input class="border-2 border-green-400" type="text" id="nome" name="nome" value="<%=produto.nome %>" required>
         <br>
         <label for="preco">Preco</label>
-        <input  type="text" name="preco" value="" />
+        <input  type="text" name="preco" value="<%=produto.preco  %>"  required>
         <br>
         <label for="imagem">Imagem</label>
-        <input  type="text" name="imagem"  />
-        <br>
-        <label for="descricao">Descrição</label>
-        <input  type="text" name="descricao" />
+        <input  type="text" name="imagem" value= "<%=produto.imagem  %>" required>
         <br>
         <label for="id_fabricante" >fabricante</label>
-        <input type="text" name="id_fabricante" />
+        <input type="text" name="id_fabricante" value= "<%=produto.id_fabricante  %>" required>
         <br>
         <label for="quantidade">Quantidade</label>
-        <input  type="text" name="quantidade"/>
+        <input  type="text" name="quantidade"  value= "<%=produto.quantidade%>" required>
         <br>
         <label for="ativo">ativo</label>
-        <input  type="text"  name="ativo"/>
+        <input  type="text"  name="ativo" value= "<%=produto.ativo %>" required>
         <br>
 
         <button type="submit">Salvar</button>
