@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/home.css" />
+    <link rel="stylesheet" href="/style/headerGlobal.css">
+    <link rel="stylesheet" href="/style/footerglobal.css">
+
+    <style>
+        
+        main{
+           display: flex; 
+           align-items: center; 
+           justify-content: space-around; 
+           flex-direction: column; 
+           margin: 20px; 
+        }
+
+        .p{
+            /*border: solid 1px darkred;
+            border-radius: 0.25rem;*/
+            font-size: 1.5rem;
+            padding: 5px;
+
+        }
+
+        .btn{
+            padding: 10px;
+            font-weight: 400;
+            font-size: 1.5rem;
+            background-color: #b3a9a9;
+            color: #FFF;
+            border-radius: 0.5rem;
+        }
+
+        .blue{
+            background-color: #0069fa;
+        }
+
+
+    </style>
+    
+    <title>Produto Detalhes</title>
+</head>
+<body>
+    <%-include('../components/header') %>
+    
+    <main style="">
+
+        <p class="p"><b>Nome:</b> <%= produto.nome%></p>
+        <p class="p"><b>imagem:</b> <%=produto.imagem %></p>
+        <p class="p"><b>Preço:</b> <%=produto.preco %></p>
+        <p class="p"><b>Descrição:</b> <%=produto.descricao %></p>
+        <p class="p"><b>Quantidade:</b> <%=produto.quantidade %></p>
+        <p class="p">
+            <% if (produto.ativo === 0) { %>
+                <p class="btn">Não</p>
+            <% }else{ %>
+                <p class="btn blue">Sim</p>
+            <% } %> 
+        </p>
+        
+    </main>
+
+    <%- include('../components/footer.ejs')  %>
+</body>
+</html>

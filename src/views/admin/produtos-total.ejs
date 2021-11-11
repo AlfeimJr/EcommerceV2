@@ -8,6 +8,48 @@
     <link rel="stylesheet" href="/style/home.css" />
     <link rel="stylesheet" href="/style/headerGlobal.css">
     <link rel="stylesheet" href="/style/footerglobal.css">
+
+    <style>
+        
+
+        .p{
+            /*border: solid 1px darkred;
+            border-radius: 0.25rem;*/
+            font-size: 1.5rem;
+            padding: 5px;
+
+        }
+
+        .btn{
+            padding: 5px;
+            font-weight: 400;
+            font-size: 1rem;
+            background-color: #FFF;
+            color: #FFF;
+            border-radius: 0.5rem;
+            font-style: bold;
+            margin: 2px 5px 2px 5px;
+            cursor: pointer;
+        }
+
+        .blue{
+            background-color: #ABDCFF;
+        }
+        .yellow{
+                background-color: #fcfc9b;
+        }
+        .red{
+                background-color: #dfc0ab;
+        }
+
+
+        .ações-container{
+                display: flex;
+        }
+
+    </style>
+
+
     <title>Cadastro de Produtos</title>
 </head>
 
@@ -45,9 +87,12 @@
                                         <% } %> 
                                       
                                 </th>
-                                <th style="border: 1px solid gray;">
+                                <th class="ações-container">
+                                        <a  href="/detalhesProduto/<%= produto.id %>"> <button class="btn blue">👀</button></a>
+                                        <a  href="/editarProduto/<%= produto.id %>"> <button class="btn yellow">✏️</button></a>
+
                                         <form action="/admin/deletarProduto/<%= produto.id%>?_method=DELETE" method="post">
-                                                <button style="background-color: #e04640; color:#FFF" type="submit">Excluir</button>
+                                                <button class="btn red" type="submit">🗑️</button>
                                         </form>   
                                 </th>      
                         </tr>

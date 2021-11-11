@@ -8,6 +8,7 @@ const routes = express.Router();
 routes.get("/admin/produtos", produtosController.index);
 
 
+routes.get('/detalhesProduto/:id', produtosController.viewOne);
 
 
 routes.get("/admin/produtosCadastro", produtosController.create);

@@ -13,6 +13,21 @@ const ProdutoController = {
         let totalPagina = Math.round(total/5)
         return res.render('admin/produtos-total',{produtos,totalPagina})
     },
+
+    async viewOne(req,res){
+        let {id} = req.params;
+
+        let produto = await Produto.findOne({
+            where:{
+
+                id:id
+            }
+        });
+
+        return res.render('admin/detalhesProduto',{produto})
+
+    },
+
     create(req,res){
         return res.render('admin/cadastroProduto')
     },
