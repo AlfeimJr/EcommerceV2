@@ -17,4 +17,6 @@ routes.get('/admin/editarProduto', produtosController.edit);
 // routes.get('/editarProduto/:id', produtosController.edit);
 // routes.put('/editarProduto/:id', produtosController.update);
 
+routes.delete('/admin/deletarProduto/:id', produtosController.destroy);
+
 module.exports = routes; 

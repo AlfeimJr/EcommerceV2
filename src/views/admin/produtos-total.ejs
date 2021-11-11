@@ -26,6 +26,7 @@
                                 <th style="border: 1px solid gray;">Imagem</th>
                                 <th style="border: 1px solid gray;">Qnt</th>
                                 <th style="border: 1px solid gray;">Promoção</th>
+                                <th style="border: 1px solid gray;">Ações</th>
                         </tr>
                 </thead>
                 <tbody>
@@ -38,12 +39,17 @@
                                 <th style="border: 1px solid gray;"><%= produto.quantidade %></th>
                                 <th style="border: 1px solid gray;">
                                         <% if (produto.ativo === 0) { %>
-                                         <p style="background-color: #da1b1b;color: #FFF;">Não</p>
+                                         <p style="background-color: #b3a9a9;color: #FFF;">Não</p>
                                         <% }else{ %>
                                          <p style="background-color:#0069fa; color:#FFF">Sim</p>
                                         <% } %> 
+                                      
                                 </th>
-                                
+                                <th style="border: 1px solid gray;">
+                                        <form action="/admin/deletarProduto/<%= produto.id%>?_method=DELETE" method="post">
+                                                <button style="background-color: #e04640; color:#FFF" type="submit">Excluir</button>
+                                        </form>   
+                                </th>      
                         </tr>
                         <% });  %> 
                 </tbody>

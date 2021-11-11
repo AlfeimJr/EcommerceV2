@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const methodOverride = require('method-override');
 const rotas = require('./routes/index');
 
 const rotasDeProdutos = require("./routes/produtos");
@@ -9,6 +10,8 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.resolve("src","views"));
+
+app.use(methodOverride("_method"));
 
 app.use(express.urlencoded({extended:false}))
 

@@ -65,6 +65,19 @@ const ProdutoController = {
     //     return res.redirect('/')
     // },
 
+    async destroy(req,res){
+        const {id} = req.params
+
+        const resultado = await Produto.destroy({
+            where:{
+                id: id
+            }
+
+        })
+
+        console.log(resultado)
+        return res.redirect('/admin/produtos')
+    },
 }
 
 module.exports = ProdutoController;
