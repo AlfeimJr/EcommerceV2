@@ -34,8 +34,31 @@
             <%- include('../components/filter.ejs')  %> 
 
             <!--caixa de produtos-->
-            <div class="produtos">
-                <div class="produto">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
+                <% produtos.forEach(produto => { %>
+                   <img style="width: 100px; border: 1px solid blueviolet"src="/img/Computador.jpg " alt="" id="imagem-produto">
+                   <h2><%= produto.nome %> </h2>
+                   <h3><%= produto.preco%> </h3>
+                
+                           <!-- <th style="border: 1px solid gray;">
+                                   <% if (produto.ativo === 0) { %>
+                                    <p style="background-color: #b3a9a9;color: #FFF;">Não</p>
+                                   <% }else{ %>
+                                    <p style="background-color:#0069fa; color:#FFF">Sim</p>
+                                   <% } %> 
+                                
+                           </th> -->
+                <% });  %> 
+    
+                <% for(let nrPagina = 1; nrPagina <= totalPagina; nrPagina++) { %> 
+                        <div class="informacoes">
+                            <a href="?page=<%= nrPagina %> "><%= nrPagina %></a>
+                        </div>                    
+                        
+                <% } %> 
+
+
+                <!-- <div class="produto">
                     <img src="/img/Computador.jpg" alt="" id="imagem-produto">
                     <div class="informacoes">
                     <h2>Infos importantes sobre o produto</h2>
@@ -127,7 +150,7 @@
                     <h3>R$2.000,00</h3>
                     <p=AVISTA id="avista">A VISTA</p>
                     </div>    
-                </div>
+                </div> -->
              
             </div>
 

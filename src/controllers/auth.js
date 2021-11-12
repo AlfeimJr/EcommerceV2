@@ -18,7 +18,7 @@
 //CRIANDO UM CADASTRO
 
 const {Usuario} = require('../models')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 
 const authController = {
