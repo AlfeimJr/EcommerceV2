@@ -3,9 +3,18 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op
 
 const indexController ={
-    exibirHome:((req, res)=>{
-        res.render("pages/home")
-    }),
+    async exibirHome(req, res) {
+
+        let {page = 1} = req.query
+        let {count:total, rows:produtos} = await Produto.findAndCountAll({
+            limit:10,
+            
+        });
+        
+        
+        return res.render('pages/home',{produtos})
+
+    },
 
     exibirDetalhes:((req, res)=>{
         res.render("pages/detalhes")

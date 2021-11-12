@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/style/home.css" />
     <link rel="stylesheet" href="/style/headerGlobal.css">
     <link rel="stylesheet" href="/style/footerglobal.css">
+
   </head>
 
   <body>
@@ -27,19 +28,44 @@
 
     <main>
 
+
+
     <div class="homePrincipal">
       <source media="(max-width: 670px)" srcset="img/pchome.jpg">
       <img src="/img/banner-img01.jpg">
     </div>
 
     
-    <div class="homeInferior">
+    <!-- <div class="homeInferior">
       
       <img src="/img/Computador.jpg">
       <h2 class="descricao">Destaque do Mês</h2>
       <h3 class="descricao">Computador Gamer</h3>
       <p class="descricao">Preço a vista R$2600,00</p>
     </div>
+
+    <div> -->
+      <h4 style="text-align: center; font-size: 2rem; margin-top: 40px;">Promoção</h4>
+      <div style="display: flex;  align-items: center; justify-content: center; margin: 20px 10px 40px 10px;">
+        <% produtos.forEach(produto => { %>
+          <div >
+            <% if (produto.ativo === 0) { %>
+             <a href="/detalhesProduto/<%= produto.id %>">
+               <img src="/img/Computador.jpg">
+               <h2 class="descricao">Destaque do Mês</h2>
+               <h3 class="descricao"><%= produto.nome %> </h3>
+               <p class="descricao"><%= produto.preco%> </p>
+             </a>
+            <% }else{ %>
+             
+            <% } %> 
+              
+          </div>
+        <% });  %> 
+    </div>
+
+
+
 
     </main>
 
