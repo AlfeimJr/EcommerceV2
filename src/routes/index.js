@@ -2,14 +2,15 @@ const { Router } = require('express');
 const express = require('express');
 const path = require('path');
 const routes = express.Router();
-const indexController = require('../controllers/index')
-const authController = require('../controllers/auth')
-const isLogin = require('../middlewares/isLogin')
+const indexController = require('../controllers/index');
+const authController = require('../controllers/auth');
+const isLogin = require('../middlewares/isLogin');
 
 routes.get('/', indexController.exibirHome )
 routes.get('/home', isLogin, indexController.exibirHome )
 routes.get('/detalhes', indexController.exibirDetalhes )
 routes.get('/categorias', indexController.exibirCategorias )
+routes.get('/promocao', indexController.exibirPromocao);
 routes.get('/carrinho', indexController.exibirCarrinho)
 routes.get('/painel-usuario', indexController.exibirPerfil)
 routes.get('/pagamento', indexController.exibirPagamento)

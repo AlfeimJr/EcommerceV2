@@ -32,6 +32,19 @@ const indexController ={
 
     },
 
+    async exibirPromocao(req, res){
+        let {page = 1} = req.query
+        let {count:total, rows:produtos} = await Produto.findAndCountAll({
+            limit:10,
+            offset: (page - 1) * 10
+        });
+        
+        let totalPagina = Math.round(total/10)
+        return res.render('pages/promocao',{produtos,totalPagina})
+
+    },
+
+
     // async viewOne(req,res){
     //     let {id} = req.params;
 
