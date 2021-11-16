@@ -7,47 +7,150 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="/style/categorias.css">
-    <link rel="stylesheet" href="/style/headerGlobal.css">
+    <link rel="stylesheet" href="/style/headerGlobal.css">  
     <link rel="stylesheet" href="/style/footerglobal.css">
 
     <!--Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"
       rel="stylesheet"
-    />
-    <!--add swiper-->
+    /> -->
 
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/swiper/swiper-bundle.min.css"
-      />
+  
+        <style>
+            .body {
+                background: rgb(224, 214, 214);
+            }
+            .categoria-main {
+               
+                display: flex;
+                align-items: start;
+                justify-content: center;
+            }
+            .categoria-produtos{
+                width: 90%;
+                display: flex;
+                flex-wrap: wrap;
 
-    <title>Categorias</title>
+            }
+            
+            .categoria-items-produtos{
+                max-width: 270px;   
+                display: flex;
+                /* border: 2px solid #111; */
+                flex-direction: column;
+                align-items: center;
+                margin: 10px;
+                padding: 10px;
+                background: #fff;
+                border-radius: 0.5rem;
+            }
+              
+        </style>
+<title>Categorias</title>
 </head>
-<body>
-        <%- include('../components/header.ejs') %>
-    
-    <main>
-            <!--Filter-->
-            <%- include('../components/filter.ejs')  %> 
+<body class="body"> 
+    <%- include('../components/header.ejs')%> 
+    <main >
+        <div class="categoria-main">
+                <!--caixa do filtro-->
+            <div class="filtro-pai">
+                    
+                <div class="filtro">
+                        <div class="filtro-main">
+                            <div class="topo-filtro">
+                               <img class="antena-topo-filtro" src="/img/funil.webp" alt="">
+                               <h2 id="filtros">Filtros</h2> 
+                            </div>
+                        </div>
+                        <div class="filtro-corpo">
+                            <h3>Ofertas</h3>
+                            <br>
+                            
+                            <input type="checkbox" name="produtos-prime" id="produtos-prime"> <label for="produtos-prime">Produtos Prime</label>
+                            <br>
+                            <br>
+                            
+            
+                            <label for="valor-minimo" style="margin-left: 5px;">De: R$</label> 
+                            <input class="preco" type="text" id="valor-minimo" name="valor-minimo"  placeholder="0000">
+                            <br>
+                            <br>
+            
+                            <label for="valor-maximo">Até: R$</label>
+                            <input class="preco"type="text" id="valor-maximo"  name="valor-maximo" placeholder="0000">
+                            <br>
+                            <br>
+                            <!--barra de rolagem-->
+                            <div class="scroll">
+                                <input style="color:red
+                                " type="range" name="" id="">
+                            </div>
+                            <br>
+                            <br>
+                            <!--botões-->
+                            <button class="botao" type="limpar">Limpar</button>
+            
+                            <button class="botao" type="aplicar">Aplicar</button>
+                            <br>
+                            <br>
+                            <br>
+            
+                            <h3>Marcas</h3>
+                            <br>
+                            
+            
+                            <input type="checkbox" name="marca-1" id="marca-1"> <label for="marca-1">marca 01</label>
+                            <br>
+                            <br>
+                            <input type="checkbox" name="marca-2" id="marca-2"> <label for="marca-2">marca 02</label>
+                            <br>
+                            <br>
+                            <input type="checkbox" name="marca-3" id="marca-3"> <label for="marca-3">marca 03</label>
+                            <br>
+                            <br>
+                            <input type="checkbox" name="marca-4" id="marca-4"> <label for="marca-4">marca 04</label>
+                            <br>
+                            <br>
+                            <br>
+                            
+                            
+                            <h3>Tipos de Produto</h3>
+                            <br>
+                            <input type="checkbox" name="produto-1" id="produto-1"> <label for="produto-1">exemplo 01</label>
+                            <br>
+                            <br>
+            
+                            <h3>Processador</h3>
+                            <br>
+            
+                            <input type="checkbox" name="processador-1" id="processador-1"> <label for="processador-1">exemplo 01</label>
+                            <br>
+                            <br>
+            
+                            <h3>Memória RAM</h3>
+                            <br>
+                        
+                            <input type="checkbox" name="memoria-1" id="memoria-1"> <label for="memoria-1">exemplo 01</label>
+                            <br>
+                            
+                        </div>
+                </div>
+
+            </div>
 
             <!--caixa de produtos-->
-            <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
+            <div class="categoria-produtos">
+               
                 <% produtos.forEach(produto => { %>
-                   <img style="width: 100px; border: 1px solid blueviolet"src="/img/Computador.jpg " alt="" id="imagem-produto">
-                   <h2><%= produto.nome %> </h2>
-                   <h3><%= produto.preco%> </h3>
-                
-                           <!-- <th style="border: 1px solid gray;">
-                                   <% if (produto.ativo === 0) { %>
-                                    <p style="background-color: #b3a9a9;color: #FFF;">Não</p>
-                                   <% }else{ %>
-                                    <p style="background-color:#0069fa; color:#FFF">Sim</p>
-                                   <% } %> 
-                                
-                           </th> -->
+                    <div class="categoria-items-produtos">
+                        <img src="/img/Computador.jpg ">
+                        <h2><%= produto.nome %> </h2>
+                        <h3><%= produto.preco%> </h3>
+                    </div>
+                       
                 <% });  %> 
     
                 <% for(let nrPagina = 1; nrPagina <= totalPagina; nrPagina++) { %> 
@@ -158,7 +261,6 @@
 
     </main>
 
-    <%- include('../components/footer.ejs')  %> 
-    
+    <%- include('../components/footer.ejs')%> 
 </body>
 </html>
