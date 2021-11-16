@@ -20,6 +20,37 @@
     <link rel="stylesheet" href="/style/headerGlobal.css">
     <link rel="stylesheet" href="/style/footerglobal.css">
 
+    <style>
+      .body {
+          background: rgb(224, 214, 214);
+      }
+      .categoria-main {
+         
+          display: flex;
+          align-items: start;
+          justify-content: center;
+      }
+      .categoria-produtos{
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+
+      }
+      
+      .categoria-items-produtos{
+          max-width: 270px;   
+          display: flex;
+          /* border: 2px solid #111; */
+          flex-direction: column;
+          align-items: center;
+          margin: 10px;
+          padding: 10px;
+          background: #fff;
+          border-radius: 0.5rem;
+      }
+
+  </style>
+
   </head>
 
   <body>
@@ -46,34 +77,28 @@
 
     <div> -->
       <h4 style="text-align: center; font-size: 2rem; margin-top: 40px;">Promoção</h4>
-      <div style="display: flex;  align-items: center; justify-content: center; margin: 20px 10px 40px 10px;">
+
+
+      <div class="categoria-main" >
         <% produtos.forEach(produto => { %>
           <div >
-            <% if (produto.ativo === 0) { %>
-             <a href="/detalhesProduto/<%= produto.id %>">
+            <% if (produto.ativo === 1) { %>
+             <a class="categoria-items-produtos" href="/detalhesProduto/<%= produto.id %>">
                <img src="/img/Computador.jpg">
                <h2 class="descricao">Destaque do Mês</h2>
-               <h3 class="descricao"><%= produto.nome %> </h3>
-               <p class="descricao"><%= produto.preco%> </p>
+               <h3 class="descricao"><%= produto.nome%></h3>
+               <p class="descricao"><%= produto.preco%></p>
              </a>
-            <% }else{ %>
-             
             <% } %> 
-              
           </div>
         <% });  %> 
-    </div>
-
-
-
+      </div>
 
     </main>
 
 
 
     <%- include('../components/footer.ejs')  %> 
-
-    
 
   </body>
 </html>

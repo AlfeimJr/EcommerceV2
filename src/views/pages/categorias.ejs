@@ -47,6 +47,19 @@
                 background: #fff;
                 border-radius: 0.5rem;
             }
+
+            .categoria-paginação{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+            .categoria-items-paginação{
+            background-color: aqua;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 0.25rem;
+            }
               
         </style>
 <title>Categorias</title>
@@ -152,113 +165,17 @@
                     </div>
                        
                 <% });  %> 
-    
-                <% for(let nrPagina = 1; nrPagina <= totalPagina; nrPagina++) { %> 
-                        <div class="informacoes">
-                            <a href="?page=<%= nrPagina %> "><%= nrPagina %></a>
-                        </div>                    
-                        
-                <% } %> 
 
-
-                <!-- <div class="produto">
-                    <img src="/img/Computador.jpg" alt="" id="imagem-produto">
-                    <div class="informacoes">
-                    <h2>Infos importantes sobre o produto</h2>
-                    </div>                    
-                    <div class="disponivel">
-                    <h3>DISPONÍVEL</h3>
-                    <h4>Compre agora</h4>
-                    </div>
-                    <img src="" alt="" id="estrelas">
-                    <div class="precosMobile">
-                    <h1>R$ 2412,00</h1>
-                    </div>
-                    <div class="jurosMobile">
-                    <h5>Em ate 12x sem juros</h5>
-                    </div>
-                    <div class="precos">
-                    <h6>De:R$ 2.850,00</h6>
-                    <h5>Por:R$ 2.412,00</h5>
-                    <p>Em até 12x no cartão</p>
-                    <h3>R$2.000,00</h3>
-                    <p=AVISTA id="avista">A VISTA</p>
-                    </div>
-                </div>
-                <div class="produto">
-                    <img src="/img/Processador.jpg" alt="" id="imagem-produto">
-                    <div class="informacoes"><h2>Infos importantes sobre o produto</h2>
-                    </div>
-                    <div class="disponivel">
-                    <h3>DISPONÍVEL</h3>
-                    <h4>Compre agora</h4>
-                    </div>
-                    <img src="" alt="" id="estrelas">
-                    <div class="precosMobile">
-                    <h1>R$ 2412,00</h1>
-                    </div>
-                    <div class="jurosMobile">
-                    <h5>Em ate 12x sem juros</h5>
-                    </div>
-                    <div class="precos">
-                    <h6>De:R$ 2.850,00</h6>
-                    <h5>Por:R$ 2.412,00</h5>
-                    <p>Em até 12x no cartão</p>
-                    <h3>R$2.000,00</h3>
-                    <p=AVISTA id="avista">A VISTA</p>
-                    </div>    
-                </div>
-                <div class="produto">
-                    <img src="/img/Ps5.jpg" alt="" id="imagem-produto">
-                    <div class="informacoes"><h2>Infos importantes sobre o produto</h2>
-                    </div>                       
-                    <div class="disponivel">
-                    <h3>DISPONÍVEL</h3>
-                    <h4>Compre agora</h4>
-                    </div>
-                    <img src="" alt="" id="estrelas">
-                    <div class="precosMobile">
-                    <h1>R$ 2412,00</h1>
-                    </div>
-                    <div class="jurosMobile">
-                    <h5>Em ate 12x sem juros</h5>
-                    </div>
-                    <div class="precos">
-                    <h6>De:R$ 2.850,00</h6>
-                    <h5>Por:R$ 2.412,00</h5>
-                    <p>Em até 12x no cartão</p>
-                    <h3>R$2.000,00</h3>
-                    <p=AVISTA id="avista">A VISTA</p>
-                    </div>    
-                </div>
-                <div class="produto">
-                    <img src="/img/3570943300_1.jpg" alt="" id="imagem-produto">
-                    <div class="informacoes"><h2>Infos importantes sobre o produto</h2>
-                    </div>
-                    <div class="disponivel">
-                    <h3>DISPONÍVEL</h3>
-                    <h4>Compre agora</h4>
-                    </div>
-                    <img src="" alt="" id="estrelas">
-                    <div class="precosMobile">
-                    <h1>R$ 2412,00</h1>
-                    </div>
-                    <div class="jurosMobile">
-                    <h5>Em ate 12x sem juros</h5>
-                    </div>
-                    <div class="precos">
-                    <h6>De:R$ 2.850,00</h6>
-                    <h5>Por:R$ 2.412,00</h5>
-                    <p>Em até 12x no cartão</p>
-                    <h3>R$2.000,00</h3>
-                    <p=AVISTA id="avista">A VISTA</p>
-                    </div>    
-                </div> -->
-             
             </div>
-
+            
         </div>
-
+        <div class="categoria-paginação">
+            <% for(let nrPagina = 1; nrPagina <= totalPagina; nrPagina++) { %> 
+                <a class="categoria-items-paginação" href="?page=<%= nrPagina %> "><%= nrPagina %></a>        
+            <% } %> 
+            <p class="categoria-items-paginação">....</p>
+        </div>
+        
     </main>
 
     <%- include('../components/footer.ejs')%> 

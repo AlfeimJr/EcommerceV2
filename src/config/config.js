@@ -2,7 +2,7 @@
 module.exports = {
    
     username: 'root',
-    password: '2550',
+    password: null,
     database: 'devgames',
     host: "localhost",
     dialect: "mysql"
