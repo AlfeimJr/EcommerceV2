@@ -20,9 +20,7 @@ module.exports = (conection, DataTypes) => {
         admnistrador:{
             type: DataTypes.INTEGER
         },
-        create_at: {
-            type: DataTypes.DATE,
-        },
+      
     },
     {
         tableName:'usuario',

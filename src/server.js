@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
+const session = require('express-session');
+const isLogin = require('./middlewares/isLogin')
+
 const rotas = require('./routes/index');
 
 const rotasDeProdutos = require("./routes/produtos");
@@ -10,8 +13,19 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.resolve("src","views"));
+app.use(session(
+        {
+        secret:'devgame',
+        resave:true,
+        saveUninitialized:true
+        }
+    )
+);
 
 app.use(methodOverride("_method"));
+
+
+
 
 app.use(express.urlencoded({extended:false}))
 

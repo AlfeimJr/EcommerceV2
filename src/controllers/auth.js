@@ -1,21 +1,3 @@
-// const services = require('../features/services');
-//const Boom = require('boom');
-
-// const Usuario = require("../models/Usuario")
-
-// module.exports = {
-//     auth: async ctx => {
-//         const { req, res } = ctx;
-//         const user = await services.auth(req.body)
-//         if (user) {
-//             res.body = user
-//         } else {
-//             res.body = { result: Boom.badRequest() }
-//         };
-//     },
-// }
-
-//CRIANDO UM CADASTRO
 
 const {Usuario} = require('../models')
 const bcrypt = require('bcryptjs')
@@ -45,7 +27,7 @@ const authController = {
     async login(req,res){
         try{
             const{email,senha} = req.body;
-            const usuario = await Usuario.findAll({
+            const usuario = await Usuario.findOne({
                 where:{
                     email,
                 }
@@ -53,9 +35,9 @@ const authController = {
             if(!usuario)return res.render('pages/login-cadastro',{error: 'Usuario nao existe!'})
 
             if(!bcrypt.compareSync(senha, usuario.senha)){
-                return res.render('pages/login',{error: 'Senha esta errada!'})
+                return res.render('pages/login-cadastro',{error: 'Senha esta errada!'})
             }
-            req.sesseion.user = {
+            req.session.user = {
                 id: usuario.id,
                 name:usuario.nome,
             }
@@ -63,7 +45,7 @@ const authController = {
             return res.redirect('/home');
         }catch(error){
             console.log (error)
-            return res.renver('pages/login',{error: 'Sistema indisponivel tente novamente'})
+            return res.render('pages/login-cadastro',{error: 'Sistema indisponivel tente novamente'})
         }
     }
 }

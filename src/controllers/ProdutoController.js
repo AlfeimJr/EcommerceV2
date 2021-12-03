@@ -3,6 +3,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op
 
 const ProdutoController = {
+
     async index(req,res){
         let {page = 1} = req.query
         let {count:total, rows:produtos} = await Produto.findAndCountAll({
