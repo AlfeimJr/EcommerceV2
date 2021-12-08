@@ -1,5 +1,6 @@
 
 const {Usuario} = require('../models')
+const {Contato} = require('../models')
 const bcrypt = require('bcryptjs')
 
 
@@ -47,7 +48,22 @@ const authController = {
             console.log (error)
             return res.render('pages/login-cadastro',{error: 'Sistema indisponivel tente novamente'})
         }
+    },
+    async contato(req, res){
+        const{email, mensagem} = req.body
+        try{
+            const contato = await Contato.create({
+                email,
+                mensagem,
+            });
+
+            return res.redirect("/home")
+        }catch(error){
+            console.log(error)
+            return res.redirect("/home")
+        }
     }
+
 }
 
 module.exports = authController

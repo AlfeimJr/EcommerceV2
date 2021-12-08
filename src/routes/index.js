@@ -17,6 +17,8 @@ routes.get('/painel-usuario', indexController.exibirPerfil);
 routes.get('/pagamento', indexController.exibirPagamento);
 routes.get('/login-cadastro', indexController.exibirLogin);
 
+routes.post('/home', authController.contato)
+
 routes.post('/login',authController.login);
 
 routes.post("/login-cadastro", authController.registro);

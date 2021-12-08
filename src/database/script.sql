@@ -78,3 +78,8 @@ CREATE TABLE categoria(
   FOREIGN KEY(id_produto)REFERENCES produto(id)
 
 );
+CREATE TABLE contato(
+  id INTEGER PRIMARY KEY auto_increment,
+  email VARCHAR(200),
+  mensagem VARCHAR(200)
+);
