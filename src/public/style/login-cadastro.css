@@ -5,7 +5,7 @@
 }
  
 /* remove a linha dos links */
-a{
+.container a{
   text-decoration: none;
 }
  
@@ -19,9 +19,10 @@ a.links{
   margin: 0px auto;
   position: relative;   
 }
+
 h1{
   font-size: 48px;
-  color: #066a75;
+  color: #FF0000;
   padding: 2px 0 10px 0;
   font-family: Arial,sans-serif;
   font-weight: bold;
@@ -37,7 +38,7 @@ h1:after{
   background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
   background: linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
 }
-p{
+.container p{
   margin-bottom:15px;
 }
  
@@ -46,7 +47,7 @@ p{
 }
  
 label{
-  color: #405c60;
+  color: #CC5D55;
   position: relative;
 }/* placeholder */
 ::-webkit-input-placeholder  {
@@ -54,17 +55,17 @@ label{
   font-style: italic;
 }
  
-input:-moz-placeholder,
+.container input:-moz-placeholder,
 textarea:-moz-placeholder{
   color: #bebcbc;
   font-style: italic;
 }
-input {
+.container input {
   outline: none;
 }
  
 /*estilo dos input,  menos o checkbox */
-input:not([type="checkbox"]){
+.container input:not([type="checkbox"]){
   width: 95%;
   margin-top: 4px;
   padding: 10px;    
@@ -81,10 +82,10 @@ input:not([type="checkbox"]){
 }
  
 /*estilo do botão submit */
-input[type="submit"]{
+ .container input[type="submit"]{
   width: 100%!important;
   cursor: pointer;  
-  background: rgb(61, 157, 179);
+  background: #FF0101;
   padding: 8px 5px;
   color: #fff;
   font-size: 20px;  
@@ -99,12 +100,13 @@ input[type="submit"]{
 }
  
 /*estilo do botão submit no hover */
-input[type="submit"]:hover{
-  background: #4ab3c6;
+.container input[type="submit"]:hover{
+  background: #FF0101;
+  opacity: 0.9;
 }
 .link{
   position: absolute;
-  background: #e1eaeb;
+  background:#F7F7F7;
   color: #7f7c7c;
   left: 0px;
   height: 20px;
@@ -122,9 +124,9 @@ input[type="submit"]:hover{
   font-weight: bold;
   background: #f7f8f1;
   padding: 6px;
-  color: rgb(29, 162, 193);
+  color: #DA918C;
   margin-left: 10px;
-  border: 1px solid #cbd518;
+  border: 1px solid #DA918C;
  
   -webkit-border-radius: 4px;
   border-radius: 4px;  
@@ -134,17 +136,18 @@ input[type="submit"]:hover{
 }
  
 .link a:hover {
-  color: #39bfd7;
+  color: #FF0101;
   background: #f7f7f7;
-  border: 1px solid #4ab3c6;
+  border: 1px solid #FF0101;
 }
 #cadastro, 
 #login{
+  
   position: absolute;
   top: 0px;
   width: 88%;   
   padding: 18px 6% 60px 6%;
-  margin: 0 0 35px 0;
+  margin: 120px 0 35px 100px;
   background: #f7f7f7;
   border: 1px solid rgba(147, 184, 189,0.8);
    

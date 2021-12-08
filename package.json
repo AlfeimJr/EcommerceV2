@@ -1,7 +1,7 @@
 {
   "name": "sequelize-dh",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto integrador do grupo 02",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -37,7 +37,15 @@
   },
   "devDependencies": {
     "express-generator": "^4.16.1",
-    "nodemon": "^2.0.14",
+    "nodemon": "^2.0.15",
     "sequelize-cli": "^6.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlfeimJr/EcommerceV2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlfeimJr/EcommerceV2/issues"
+  },
+  "homepage": "https://github.com/AlfeimJr/EcommerceV2#readme"
 }

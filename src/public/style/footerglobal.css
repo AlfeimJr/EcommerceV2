@@ -4,7 +4,7 @@
     font-family: 'Poppins';
   }
 
-footer {
+.footer-pai {
     background: #f3f3f3;
   }
   
@@ -13,6 +13,7 @@ footer {
     justify-content: center;
     align-items: stretch;
     font-size: 12px;
+    margin-top: 275px;
     
 }
 
@@ -22,4 +23,50 @@ footer {
     align-items: stretch;
     font-size: 12px;
     
+}
+.formNewsLatter input{
+  flex: 0 2 19.625rem;
+    height: 48px;
+    background: rgb(242, 243, 244);
+    border: 1px solid black;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 12px 0px 12px 16px;
+    border-radius: 0.25rem;
+}
+.atendimentoUm h2{
+  margin-right: 50px;
+  font-size: 22px;
+  margin-top: 11px;
+  color: white;
+}
+.enviar{
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 3rem;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem 3rem;
+    background: #FF0000;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    border: none;
+}
+.desenvolvido p{
+  margin-top: 20px;
+  color: white;
+}
+
+.fotter-pai{
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    min-height: 4.625rem;
+    background: #3a3a3a;
+    width: 100%;
+    margin-bottom: 0;
 }
