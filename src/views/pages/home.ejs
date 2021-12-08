@@ -12,72 +12,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"
       rel="stylesheet"/>
 
-    <link
-      rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-
     <!-- CSS -->
     <link rel="stylesheet" href="/style/home.css" />
     <link rel="stylesheet" href="/style/headerGlobal.css">
     <link rel="stylesheet" href="/style/footerglobal.css">
-
-    <style>
-      .body {
-          background: rgb(224, 214, 214);
-      }
-      .categoria-main {
-         
-          display: flex;
-          align-items: start;
-          justify-content: center;
-      }
-      .categoria-produtos{
-          width: 100%;
-          display: flex;
-          flex-wrap: wrap;
-
-      }
-      
-      .categoria-items-produtos{
-          max-width: 270px;   
-          display: flex;
-          /* border: 2px solid #111; */
-          flex-direction: column;
-          align-items: center;
-          margin: 10px;
-          padding: 10px;
-          background: #fff;
-          border-radius: 0.5rem;
-      }
-
-  </style>
-
   </head>
-
   <body>
 
       <%- include('../components/header')  %> 
 
-    <main class="main">
+     <!-- sessão do carrossel -->
 
+     <header>
+      <div class="header"></div>
+      <div class="slider">
+          <div class="slider--controls">
+              <div class="slider--control" onclick="goPrev()">
+                  <img src="/img/esquerda.png" alt="">
+              </div>
+              <div class="slider--control" onclick="goNext()">
+                  <img src="/img/direita.png" alt="">
+              </div>
+          </div>
+          <div class="slider--width">
+              <div class="slider--item" style="background-image: url('/img/img-carrossel-2.jpg');"></div>
+              <div class="slider--item" style="background-image: url('/img/img-carrossel-4.jpg');"></div>
+              <div class="slider--item" style="background-image: url('/img/img-carrossel-5.jpg');"></div>
+          </div>
+      </div>
+  </header>
+  <script src="js/carrossel.js"></script>
+    <!-- sessão do carrossel -->
 
-
-    <div class="homePrincipal">
-      <source media="(max-width: 670px)" srcset="img/pchome.jpg">
-      <img src="/img/banner-img01.jpg">
-    </div>
-
-    
-    <!-- <div class="homeInferior">
-      
-      <img src="/img/Computador.jpg">
-      <h2 class="descricao">Destaque do Mês</h2>
-      <h3 class="descricao">Computador Gamer</h3>
-      <p class="descricao">Preço a vista R$2600,00</p>
-    </div>
-
-    <div> -->
       <h4 style="text-align: center; font-size: 2rem; margin-top: 40px;">Promoção</h4>
-
 
       <div class="categoria-main" >
         <% produtos.forEach(produto => { %>
@@ -95,9 +62,6 @@
       </div>
 
     </main>
-
-
-
     <%- include('../components/footer.ejs')  %> 
 
   </body>

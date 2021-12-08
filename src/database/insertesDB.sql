@@ -10,3 +10,4 @@ INSERT INTO fabricante(nome) VALUES
 ('fabricante um' ),
 ('fabricante dois' ),
 ('fabricante  tres' );
+
