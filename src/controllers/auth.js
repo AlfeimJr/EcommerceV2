@@ -39,13 +39,13 @@ const authController = {
           error: "Ops, usuario ou senha invalidos!",
         });
       }
-      console.log(`Usuario ----- > ${JSON.stringify(usuario.administrador)}`);
+      console.log(`Usuario ----- > ${JSON.stringify(usuario.admnistrador)}`);
       req.session.usuario = {
         id: usuario.id,
         nome: usuario.nome,
         email: usuario.email,
       };
-      if (usuario.administrador) {
+      if (usuario.admnistrador) {
         req.session.usuario.admin = true;
         return res.redirect("/admin/produtos");
       } else {
@@ -53,8 +53,8 @@ const authController = {
         return res.redirect("/");
       }
 
-      console.log(`Sessão ----- > ${JSON.stringify(req.session.usuario)}`);
-      return res.redirect("/");
+     
+
     } catch (error) {
       console.log(error);
       return res.render("pages/login-cadastro", {
