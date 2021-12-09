@@ -1,8 +1,9 @@
 const express = require("express");
 
 const produtosController = require("../controllers/ProdutoController");
-const CardController = require('../controllers/CardController')
 
+const cartController = require("../controllers/cartController");
+const isLogin = require('../middlewares/isLogin')
 
 const routes = express.Router();
 
@@ -10,7 +11,7 @@ const routes = express.Router();
 routes.get("/admin/produtos", produtosController.index);
 
 
-routes.get('/detalhesProduto/:id', produtosController.viewOne);
+routes.get('/detalhesProduto/:id',isLogin, produtosController.viewOne);
 
 
 routes.get("/admin/produtosCadastro", produtosController.create);
@@ -24,6 +25,7 @@ routes.delete('/admin/deletarProduto/:id', produtosController.destroy);
 
 
 //carrinho-------------------------------------------------
-routes.get('/card',CardController.card)
+
+
 
 module.exports = routes; 

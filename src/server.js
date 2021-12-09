@@ -25,8 +25,6 @@ app.use(session(
 app.use(methodOverride("_method"));
 
 
-
-
 app.use(express.urlencoded({extended:false}))
 
 app.use(express.static(path.resolve("src",'public')));

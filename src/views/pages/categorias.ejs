@@ -158,11 +158,13 @@
             <div class="categoria-produtos">
                
                 <% produtos.forEach(produto => { %>
-                    <div class="categoria-items-produtos">
-                        <img src="/img/Computador.jpg ">
-                        <h2><%= produto.nome %> </h2>
-                        <h3><%= produto.preco%> </h3>
-                    </div>
+                    <a href="/detalhesProduto/<%= produto.id%>">
+                        <div class="categoria-items-produtos">
+                            <img src="/img/Computador.jpg ">
+                            <h2><%= produto.nome %> </h2>
+                            <h3><%= produto.preco%> </h3>
+                        </div>
+                    </a>
                        
                 <% });  %> 
 

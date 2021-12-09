@@ -7,6 +7,7 @@ const authController = require('../controllers/auth');
 const isLogin = require('../middlewares/isLogin');
 
 
+
 routes.get('/', isLogin, indexController.exibirHome);
 routes.get('/home',isLogin, indexController.exibirHome);
 routes.get('/detalhes', indexController.exibirDetalhes);
@@ -16,6 +17,10 @@ routes.get('/carrinho', indexController.exibirCarrinho);
 routes.get('/painel-usuario',isLogin, indexController.exibirPerfil);
 routes.get('/pagamento', indexController.exibirPagamento);
 routes.get('/login-cadastro', indexController.exibirLogin);
+
+
+
+
 
 routes.post('/contato', authController.contato)
 
