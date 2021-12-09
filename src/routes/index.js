@@ -8,20 +8,20 @@ const isLogin = require('../middlewares/isLogin');
 
 
 routes.get('/', indexController.exibirHome);
-routes.get('/home',indexController.exibirHome);
+routes.get('/home',isLogin, indexController.exibirHome);
 routes.get('/detalhes', indexController.exibirDetalhes);
 routes.get('/categorias', indexController.exibirCategorias);
 routes.get('/promocao', indexController.exibirPromocao);
 routes.get('/carrinho', indexController.exibirCarrinho);
-routes.get('/painel-usuario', indexController.exibirPerfil);
+routes.get('/painel-usuario',isLogin, indexController.exibirPerfil);
 routes.get('/pagamento', indexController.exibirPagamento);
 routes.get('/login-cadastro', indexController.exibirLogin);
 
-routes.post('/home', authController.contato)
+routes.post('/contato', authController.contato)
 
-routes.post('/login',authController.login);
+routes.post("/login", authController.login)
 
-routes.post("/login-cadastro", authController.registro);
+routes.post("/cadastro", authController.registro,);
 routes.get('/finalizar-compra', indexController.fazerPedido);
 routes.post('/finalizar-compra', indexController.fazerPedido);
 

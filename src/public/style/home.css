@@ -88,3 +88,14 @@ header {
     background: #fff;
     border-radius: 0.5rem;
 }
+.usuario{
+  margin-left: 1600px;
+  margin-top: -35px;
+  position: absolute;
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: salmon;
+  color: white;
+  cursor: pointer;
+}
