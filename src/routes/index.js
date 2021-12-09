@@ -7,7 +7,7 @@ const authController = require('../controllers/auth');
 const isLogin = require('../middlewares/isLogin');
 
 
-routes.get('/', indexController.exibirHome);
+routes.get('/', isLogin, indexController.exibirHome);
 routes.get('/home',isLogin, indexController.exibirHome);
 routes.get('/detalhes', indexController.exibirDetalhes);
 routes.get('/categorias', indexController.exibirCategorias);
