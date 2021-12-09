@@ -28,7 +28,12 @@
         <div class="content">      
           <!--FORMULÁRIO DE LOGIN-->
           <div id="login">
-            <form method="post" action="/login"> 
+            <div>
+              <% if(typeof error != "undefined"){%>
+                <h4><%= error %></h4>
+             <% } %>
+            </div>
+            <form method="POST" action="/login"> 
               <h1>Login</h1> 
               <p> 
                 <label for="nome_login">Seu email</label>
@@ -58,7 +63,7 @@
      
           <!--FORMULÁRIO DE CADASTRO-->
           <div id="cadastro">
-            <form method="POST" action="/login-cadastro"> 
+            <form method="POST" action="/cadastro"> 
               <h1>Cadastro</h1> 
                
               <p> 

@@ -1,11 +1,11 @@
 module.exports = (req,res,next) =>{
-    const {Usuario} = req.session
-    if(typeof Usuario  == 'undefined' && !Usuario){
-       return res.redirect('/home')
+    const {usuario} = req.session
+    if(typeof usuario  == 'undefined' && !usuario){
+       return res.redirect('/login-cadastro')
     }
     
     //feita para usar as informações do usuario dentro das views
-    res.locals.Usuario = Usuario;
+    res.locals.usuario = usuario;
     // passa pro proximo 
      next();
 }

@@ -38,9 +38,10 @@ const authController = {
             if(!bcrypt.compareSync(senha, usuario.senha)){
                 return res.render('pages/login-cadastro',{error: 'Senha esta errada!'})
             }
-            req.session.user = {
+            req.session.usuario = {
                 id: usuario.id,
                 name:usuario.nome,
+                email: usuario.email,   
             }
 
             return res.redirect('/home');

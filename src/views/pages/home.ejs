@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"
       rel="stylesheet"/>
 
+      <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
     <!-- CSS -->
     <link rel="stylesheet" href="/style/home.css" />
     <link rel="stylesheet" href="/style/headerGlobal.css">
@@ -22,16 +24,16 @@
       <%- include('../components/header')  %> 
 
      <!-- sessão do carrossel -->
-
+    <a href="/painel-usuario" class="usuario">Bem vindo <%= usuario.name  %> </a>
      <header>
       <div class="header"></div>
       <div class="slider">
           <div class="slider--controls">
               <div class="slider--control" onclick="goPrev()">
-                  <img src="/img/esquerda.png" alt="">
+                <i class='bx bx-chevron-left bx-md' ></i>
               </div>
               <div class="slider--control" onclick="goNext()">
-                  <img src="/img/direita.png" alt="">
+                  <i class='bx bx-chevron-right bx-md'></i>
               </div>
           </div>
           <div class="slider--width">
