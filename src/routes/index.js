@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const routes = express.Router();
 const indexController = require('../controllers/index');
-// const authController = require('../controllers/auth');
+const authController = require('../controllers/auth');
 const isLogin = require('../middlewares/isLogin');
 
 
@@ -17,11 +17,11 @@ routes.get('/painel-usuario',isLogin, indexController.exibirPerfil);
 routes.get('/pagamento', indexController.exibirPagamento);
 routes.get('/login-cadastro', indexController.exibirLogin);
 
-// routes.post('/contato', authController.contato)
+routes.post('/contato', authController.contato)
 
-// routes.post("/login", authController.login)
+routes.post("/login", authController.login)
 
-// routes.post("/cadastro", authController.registro,);
+routes.post("/cadastro", authController.registro,);
 routes.get('/finalizar-compra', indexController.fazerPedido);
 routes.post('/finalizar-compra', indexController.fazerPedido);
 
