@@ -1,23 +1,24 @@
 const express = require("express");
-
-const produtosController = require("../controllers/ProdutoController");
-
-const cartController = require("../controllers/cartController");
 const isLogin = require('../middlewares/isLogin')
+const isAdmin = require('../middlewares/isAdmin')
+const produtosController = require("../controllers/ProdutoController");
+const CardController = require('../controllers/cartController')
+const authController = require('../controllers/auth')
+
 
 const routes = express.Router();
 
 
-routes.get("/admin/produtos", produtosController.index);
+routes.get("/admin/produtos",isAdmin, produtosController.index);
 
 
-routes.get('/detalhesProduto/:id',isLogin, produtosController.viewOne);
+routes.get('/admin/detalhesProduto/:id',isAdmin, produtosController.viewOne);
 
 
-routes.get("/admin/produtosCadastro", produtosController.create);
+routes.get("/admin/produtosCadastro",isAdmin, produtosController.create);
 routes.post("/admin/produtosCadastro", produtosController.store);
 // editando produto
-routes.get('/admin/editarProduto/:id', produtosController.edit);
+routes.get('/admin/editarProduto/:id',isAdmin, produtosController.edit);
 
 routes.put('/admin/editarProduto/:id', produtosController.update);
 
@@ -27,5 +28,4 @@ routes.delete('/admin/deletarProduto/:id', produtosController.destroy);
 //carrinho-------------------------------------------------
 
 
-
-module.exports = routes; 
+module.exports = routes;

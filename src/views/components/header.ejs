@@ -10,12 +10,16 @@
     </div>
     <div class="menu">
       <ul>
-        <li><a href="/home">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/promocao">Promoções</a></li>
         <li><a href="/categorias">Produtos</a></li>
         <li><a href="#">Sobre</a></li>
         <li><a href="/login-cadastro#paralogin">Login</a></li>
-        
+        <% if(typeof usuario != 'undefined'){ %>
+          Bem vindo <%= usuario.nome %>
+          <% } else {%>
+       Faça <a href="/login-cadastro"> login  </a> 
+       <%}%>
       </ul>
     </div>
 

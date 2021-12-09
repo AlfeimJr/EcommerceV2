@@ -1,70 +1,95 @@
-
-const {Usuario} = require('../models')
-const {Contato} = require('../models')
-const bcrypt = require('bcryptjs')
-
+const { Usuario } = require("../models");
+const { Contato } = require("../models");
+const bcrypt = require("bcryptjs");
+const { Administrador } = require("../models");
 
 const authController = {
-    async registro(req, res){
-        const{nome, email, senha, avatar,administrador} = req.body
-        try{
-            const hash = bcrypt.hashSync(senha, 10)
-            const usuario = await Usuario.create({
-                nome,
-                email,
-                senha: hash,
-                avatar,
-                administrador,
-            });
+  async registro(req, res) {
+    try {
+      const { nome, email, senha, avatar, administrador } = req.body;
+      const hash = bcrypt.hashSync(senha, 10);
+      const usuario = await Usuario.create({
+        nome,
+        email,
+        senha: hash,
+        avatar,
+        administrador: 0,
+      });
 
-            return res.redirect("/home")
-        }catch(error){
-            console.log(error)
-            return res.redirect("/login-cadastro")
-        }
-    },
-
-    //FUNCAO PARA O LOGIN FUNCIONAR
-    async login(req,res){
-        try{
-            const{email,senha} = req.body;
-            const usuario = await Usuario.findOne({
-                where:{
-                    email,
-                }
-            })
-            if(!usuario)return res.render('pages/login-cadastro',{error: 'Usuario nao existe!'})
-
-            if(!bcrypt.compareSync(senha, usuario.senha)){
-                return res.render('pages/login-cadastro',{error: 'Senha esta errada!'})
-            }
-            req.session.usuario = {
-                id: usuario.id,
-                name:usuario.nome,
-                email: usuario.email,   
-            }
-
-            return res.redirect('/home');
-        }catch(error){
-            console.log (error)
-            return res.render('pages/login-cadastro',{error: 'Sistema indisponivel tente novamente'})
-        }
-    },
-    async contato(req, res){
-        const{email, mensagem} = req.body
-        try{
-            const contato = await Contato.create({
-                email,
-                mensagem,
-            });
-
-            return res.redirect("/home")
-        }catch(error){
-            console.log(error)
-            return res.redirect("/home")
-        }
+      return res.redirect("/home");
+    } catch (error) {
+      console.log(error);
+      return res.render("login-cadastro", {
+        erro: "nao foi possivel concluir o cadastro",
+      });
     }
+  },
 
-}
+  //FUNCAO PARA O LOGIN FUNCIONAR
+  async login(req, res) {
+    try {
+      const { email, senha } = req.body;
+      const usuario = await Usuario.findOne({
+        where: {
+          email,
+        },
+      });
+      if (!usuario || !bcrypt.compareSync(senha, usuario.senha)) {
+        return res.render("pages/login-cadastro", {
+          error: "Ops, usuario ou senha invalidos!",
+        });
+      }
+      console.log(`Usuario ----- > ${JSON.stringify(usuario.administrador)}`);
+      req.session.usuario = {
+        id: usuario.id,
+        nome: usuario.nome,
+        email: usuario.email,
+      };
+      if (usuario.administrador) {
+        req.session.usuario.admin = true;
+        return res.redirect("/admin/produtos");
+      } else {
+        req.session.usuario.admin = false;
+        return res.redirect("/");
+      }
 
-module.exports = authController
+      console.log(`Sessão ----- > ${JSON.stringify(req.session.usuario)}`);
+      return res.redirect("/");
+    } catch (error) {
+      console.log(error);
+      return res.render("pages/login-cadastro", {
+        error: "Sistema indisponivel tente novamente",
+      });
+    }
+  },
+  async contato(req, res) {
+    const { email, mensagem } = req.body;
+    try {
+      const contato = await Contato.create({
+        email,
+        mensagem,
+      });
+
+      return res.redirect("/home");
+    } catch (error) {
+      console.log(error);
+      return res.redirect("/home");
+    }
+  },
+  async CreateAdmin(req, res) {
+    try {
+      const usuario = await Usuario.create({
+        nome: "Administrador",
+        email: "admin@admin.com",
+        senha: bcrypt.hashSync("123", 10),
+        avatar: null,
+        administrador: true,
+      });
+      return res.status(201).send(usuario);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+};
+
+module.exports = authController;
